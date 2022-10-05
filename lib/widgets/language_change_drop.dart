@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quraan_app/cubits/quraan_cubit/quran_cubit.dart';
+import 'package:rebirth/rebirth.dart';
 
 import '../../main.dart';
 import '../../models/language_model.dart';
@@ -65,9 +66,10 @@ class LanguageChangeDrop extends StatelessWidget {
                       context,
                       Locale(CacheHelper.getData(key: 'lang'), ''),
                     );
-                    context
-                        .read<QuranCubit>()
-                        .getQuranSurah(lang: CacheHelper.getData(key: 'lang'));
+                    WidgetRebirth.createRebirth(context: context);
+                    // context
+                    //     .read<QuranCubit>()
+                    //     .getQuranSurah(lang: CacheHelper.getData(key: 'lang'));
                   },
                 );
               }

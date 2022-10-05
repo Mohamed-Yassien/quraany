@@ -238,6 +238,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.7"
+  rebirth:
+    dependency: "direct main"
+    description:
+      name: rebirth
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.2"
   shared_preferences:
     dependency: "direct main"
     description:
