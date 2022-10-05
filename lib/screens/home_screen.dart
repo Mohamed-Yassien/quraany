@@ -28,17 +28,24 @@ class HomeScreen extends StatelessWidget {
               ? const Center(
                   child: CircularProgressIndicator(),
                 )
-              : Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: ListView.builder(
-                    itemBuilder: (context, index) {
-                      return Text(
-                        cubit.quranSurahModel!.data!.ayahs![index].text!,
-                      );
-                    },
-                    itemCount: cubit.quranSurahModel!.data!.ayahs!.length,
+              : Scrollbar(
+            thumbVisibility: true,
+                trackVisibility: true,
+                interactive: true,
+                thickness: 15.0,
+                child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: ListView.builder(
+                      itemBuilder: (context, index) {
+                        return Text(
+                          cubit.quranSurahModel!.data!.ayahs![index].text!,
+                          textAlign: TextAlign.justify,
+                        );
+                      },
+                      itemCount: cubit.quranSurahModel!.data!.ayahs!.length,
+                    ),
                   ),
-                );
+              );
         },
       ),
     );
