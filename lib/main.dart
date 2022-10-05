@@ -53,6 +53,10 @@ class _MyAppState extends State<MyApp> {
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         debugShowCheckedModeBanner: false,
+        darkTheme: ThemeData(
+          scaffoldBackgroundColor: const Color(0xFF29302C),
+          fontFamily: 'Amiri'
+        ),
         locale: Locale(CacheHelper.getData(key: 'lang') ?? 'en', ''),
         home: const WelcomeScreen(),
       ),
