@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:quraan_app/cubits/quraan_cubit/quran_cubit.dart';
@@ -12,9 +13,11 @@ main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await CacheHelper.init();
   DioHelper.init();
-  runApp(const WidgetRebirth(
-    materialApp: MyApp(),
-  ));
+  runApp(
+    const WidgetRebirth(
+      materialApp: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatefulWidget {
@@ -55,7 +58,13 @@ class _MyAppState extends State<MyApp> {
         debugShowCheckedModeBanner: false,
         darkTheme: ThemeData(
           scaffoldBackgroundColor: const Color(0xFF29302C),
-          fontFamily: 'Amiri'
+          fontFamily: 'Amiri',
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Color(0xFF29302C),
+            systemOverlayStyle: SystemUiOverlayStyle(
+              statusBarColor: Color(0xFF29302C),
+            ),
+          ),
         ),
         locale: Locale(CacheHelper.getData(key: 'lang') ?? 'en', ''),
         home: const WelcomeScreen(),

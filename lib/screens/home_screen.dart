@@ -9,6 +9,13 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text(
+          context.read<QuranCubit>().quranSurahModel!.data!.name!,
+        ),
+        centerTitle: true,
+      ),
       body: SafeArea(
         child: BlocBuilder<QuranCubit, QuranStates>(
           builder: (context, state) {

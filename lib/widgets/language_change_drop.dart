@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:quraan_app/cubits/quraan_cubit/quran_cubit.dart';
 import 'package:rebirth/rebirth.dart';
 
 import '../../main.dart';
